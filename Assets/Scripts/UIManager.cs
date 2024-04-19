@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public bool isFreeView = false;
+    public bool isFreeView;
     public bool isFreeViewInverse = true;
     public void FreeView()
     {

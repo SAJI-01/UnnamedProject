@@ -7,7 +7,7 @@ public class Teleport : MonoBehaviour
     private bool isPlayerInside;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Vector3 spherePosition;
-    [SerializeField] private float sphereSize =0.5f;
+    [SerializeField] private float sphereSize = 0.5f;
     
     private void Awake()
     {

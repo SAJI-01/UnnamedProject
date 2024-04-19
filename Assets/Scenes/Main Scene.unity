@@ -123,6 +123,162 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1231285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1231286}
+  - component: {fileID: 1231289}
+  - component: {fileID: 1231288}
+  - component: {fileID: 1231287}
+  m_Layer: 5
+  m_Name: Frame rate Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1231286
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1922391688}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -540}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1231287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Fps
+
+    000
+
+    000
+
+    000'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 14
+  m_fontSizeBase: 14
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1231288
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231285}
+  m_CullTransparentMesh: 1
+--- !u!114 &1231289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7dfc7d49a848bf48842b9a98ffcb759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  display: {fileID: 1231287}
+  sampleDuration: 1
+  displayMode: 0
 --- !u!1 &14416085
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +343,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14416085}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -249,9 +405,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &41803744
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +473,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41803744}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -378,9 +535,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &46185585
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,9 +591,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!65 &46185588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -465,7 +624,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46185585}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -541,11 +700,13 @@ Transform:
   - {fileID: 1577567266}
   - {fileID: 691490617}
   - {fileID: 436457824}
+  - {fileID: 463407513}
   - {fileID: 1590598863}
   - {fileID: 41803745}
   - {fileID: 546468542}
   - {fileID: 1798698888}
   - {fileID: 852350046}
+  - {fileID: 1713369933}
   - {fileID: 485419194}
   - {fileID: 495774746}
   - {fileID: 3600454202666355140}
@@ -615,7 +776,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105148290}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -677,9 +838,66 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
+--- !u!1 &122813131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122813132}
+  - component: {fileID: 122813133}
+  m_Layer: 0
+  m_Name: Illusion_Block Base2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &122813132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122813131}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -4, y: 0, z: -4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1202498620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &122813133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122813131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86bbd21451db7bb49bcda2251b119fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possiblePaths:
+  - target: {fileID: 1807176275}
+    active: 1
+  - target: {fileID: 697761831}
+    active: 1
+  previousBlock: {fileID: 0}
+  walkPointOffset: 0.5
+  stairOffset: 0.4
+  walkPointSpeed: 0.5
+  stairSpeed: 1.5
+  isStair: 0
+  movingGround: 0
 --- !u!1 &123219388
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +962,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123219388}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -806,9 +1024,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &190867290
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +1070,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190867290}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -978,7 +1197,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202004058}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1037,12 +1256,15 @@ MonoBehaviour:
     active: 1
   - target: {fileID: 1260413712}
     active: 1
+  - target: {fileID: 122813132}
+    active: 0
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &229741285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,7 +1639,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341751267}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1479,9 +1701,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!4 &359369091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1df1923f416aeaf4d8770a62aa2a4def,
@@ -1516,7 +1739,7 @@ MonoBehaviour:
   nearByBlock: {fileID: 750654568}
   previousBlocks: {fileID: 495774745}
   objectToToggle: {fileID: 2106038305}
-  radius: 0.64
+  radius: 0.6
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1557,9 +1780,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &382538873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,9 +1837,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!65 &382538876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1645,7 +1870,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382538873}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1723,7 +1948,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0
@@ -1756,7 +1981,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1775,7 +2000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1377643, y: -0.46633828, z: 0.39130425, w: 0.7813005}
+  m_LocalRotation: {x: 0.1377643, y: -0.46633834, z: 0.39130425, w: 0.78130054}
   m_LocalPosition: {x: 8.188294, y: 7.521752, z: -9.551933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1830,7 +2055,7 @@ Transform:
   m_GameObject: {fileID: 417165302}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1925,7 +2150,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 609c64080d481d84ca5306bf5b060ec9, type: 2}
+  - {fileID: 2100000, guid: afe55f09b9948ba48b2ef430c6e18e25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2019,7 +2244,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436457823}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2076,23 +2301,24 @@ MonoBehaviour:
   possiblePaths:
   - target: {fileID: 1590598863}
     active: 1
-  - target: {fileID: 1970801461}
+  - target: {fileID: 463407513}
     active: 0
   - target: {fileID: 691490617}
     active: 1
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1001 &448828022
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1300591130}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 76a1afac9eccbda4987f7af94f5779c2,
         type: 3}
@@ -2117,7 +2343,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 76a1afac9eccbda4987f7af94f5779c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.42
+      value: 1.4200001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 76a1afac9eccbda4987f7af94f5779c2,
         type: 3}
@@ -2161,6 +2387,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 76a1afac9eccbda4987f7af94f5779c2,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 76a1afac9eccbda4987f7af94f5779c2,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d3c5e9180c75763489cd9fca47b64789, type: 2}
@@ -2183,6 +2414,62 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2138287253}
   m_SourcePrefab: {fileID: 100100000, guid: 76a1afac9eccbda4987f7af94f5779c2, type: 3}
+--- !u!1 &463407512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 463407513}
+  - component: {fileID: 463407514}
+  m_Layer: 0
+  m_Name: Illusion_Block Base1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &463407513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463407512}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -4, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 49494695}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &463407514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463407512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86bbd21451db7bb49bcda2251b119fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possiblePaths:
+  - target: {fileID: 436457824}
+    active: 1
+  - target: {fileID: 1970801461}
+    active: 1
+  previousBlock: {fileID: 0}
+  walkPointOffset: 0.5
+  stairOffset: 0.4
+  walkPointSpeed: 0.5
+  stairSpeed: 1.5
+  isStair: 0
+  movingGround: 0
 --- !u!1 &466364551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,7 +2534,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466364551}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2309,9 +2596,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &485419193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,7 +2664,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485419193}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2438,9 +2726,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &488959875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2504,7 +2793,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488959875}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2601,9 +2890,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!65 &495774748
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2633,7 +2923,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495774745}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2770,7 +3060,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546468541}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2832,9 +3122,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &604317512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,7 +3497,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691490616}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -3266,9 +3557,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &697761830
 GameObject:
   m_ObjectHideFlags: 0
@@ -3333,7 +3625,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697761830}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -3388,7 +3680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possiblePaths:
-  - target: {fileID: 1807176275}
+  - target: {fileID: 122813132}
     active: 0
   - target: {fileID: 202004059}
     active: 1
@@ -3397,9 +3689,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1001 &715030353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3510,20 +3803,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4583849410526003547, guid: 1df1923f416aeaf4d8770a62aa2a4def,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4583849410526003547, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 32b9c61887f148d45a08a35614199b5c, type: 2}
     - target: {fileID: -1240011194566735142, guid: 1df1923f416aeaf4d8770a62aa2a4def,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1240011194566735142, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ca6e2738165116e4088358effb134a40, type: 2}
+    - target: {fileID: -133038111106242337, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -133038111106242337, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1df1923f416aeaf4d8770a62aa2a4def,
         type: 3}
       propertyPath: m_Name
       value: base2Lever
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576425551871675496, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576425551871675496, guid: 1df1923f416aeaf4d8770a62aa2a4def,
         type: 3}
       propertyPath: m_TagString
       value: Lever
@@ -3567,7 +3895,7 @@ MonoBehaviour:
   nearByBlock: {fileID: 1441125488}
   previousBlocks: {fileID: 0}
   objectToToggle: {fileID: 8897391795452795740}
-  radius: 1
+  radius: 0.6
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -3608,9 +3936,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &738559552
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,7 +4004,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738559552}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -3737,9 +4066,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &750654568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3804,7 +4134,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750654568}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -3866,9 +4196,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &760416473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,7 +4474,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852350045}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4198,7 +4529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possiblePaths:
-  - target: {fileID: 1664129033}
+  - target: {fileID: 1713369933}
     active: 0
   - target: {fileID: 1798698888}
     active: 1
@@ -4207,9 +4538,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &863417327
 GameObject:
   m_ObjectHideFlags: 0
@@ -4305,7 +4637,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918039979}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4367,9 +4699,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &965696441
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,7 +4780,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -4465,6 +4798,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1550505334}
+  - {fileID: 1922391688}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4596,9 +4930,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1008308814
 GameObject:
   m_ObjectHideFlags: 0
@@ -4663,7 +4998,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008308814}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4725,9 +5060,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1085769531
 GameObject:
   m_ObjectHideFlags: 0
@@ -4792,7 +5128,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085769531}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4854,9 +5190,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1103167813
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,7 +5305,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130441063}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -5184,6 +5521,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3431869221113007456, guid: 76a1afac9eccbda4987f7af94f5779c2, type: 3}
+--- !u!4 &1173502261 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 76a1afac9eccbda4987f7af94f5779c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1812446264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1185620062
 GameObject:
   m_ObjectHideFlags: 0
@@ -5248,7 +5591,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185620062}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -5310,9 +5653,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1202498619
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,11 +5692,13 @@ Transform:
   - {fileID: 1821381509}
   - {fileID: 1441125489}
   - {fileID: 697761831}
+  - {fileID: 122813132}
   - {fileID: 202004059}
   - {fileID: 1260413712}
   - {fileID: 1085769532}
   - {fileID: 105148291}
   - {fileID: 1902559601}
+  - {fileID: 1415856862}
   - {fileID: 1185620063}
   - {fileID: 382538874}
   m_Father: {fileID: 1300591130}
@@ -5421,7 +5767,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260413711}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -5483,9 +5829,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1001 &1275820809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5596,20 +5943,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4583849410526003547, guid: 1df1923f416aeaf4d8770a62aa2a4def,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4583849410526003547, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 32b9c61887f148d45a08a35614199b5c, type: 2}
     - target: {fileID: -1240011194566735142, guid: 1df1923f416aeaf4d8770a62aa2a4def,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1240011194566735142, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ca6e2738165116e4088358effb134a40, type: 2}
+    - target: {fileID: -133038111106242337, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1df1923f416aeaf4d8770a62aa2a4def,
         type: 3}
       propertyPath: m_Name
       value: TpLever
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1df1923f416aeaf4d8770a62aa2a4def,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576425551871675496, guid: 1df1923f416aeaf4d8770a62aa2a4def,
         type: 3}
       propertyPath: m_TagString
       value: Lever
@@ -5665,6 +6032,9 @@ Transform:
   - {fileID: 1202498620}
   - {fileID: 417165303}
   - {fileID: 292375377}
+  - {fileID: 2106038308}
+  - {fileID: 2138287256}
+  - {fileID: 1173502261}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1301494084
@@ -5822,9 +6192,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1330178276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5889,7 +6260,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330178276}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -5951,9 +6322,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1362038622
 GameObject:
   m_ObjectHideFlags: 0
@@ -6018,7 +6390,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362038622}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -6080,9 +6452,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1398407628
 GameObject:
   m_ObjectHideFlags: 0
@@ -6172,6 +6545,62 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &1415856861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1415856862}
+  - component: {fileID: 1415856863}
+  m_Layer: 0
+  m_Name: Illusion_Block Base2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1415856862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415856861}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1, y: 0, z: -4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1202498620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1415856863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415856861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86bbd21451db7bb49bcda2251b119fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possiblePaths:
+  - target: {fileID: 1902559601}
+    active: 1
+  - target: {fileID: 1478123731}
+    active: 1
+  previousBlock: {fileID: 0}
+  walkPointOffset: 0.5
+  stairOffset: 0.4
+  walkPointSpeed: 0.5
+  stairSpeed: 1.5
+  isStair: 0
+  movingGround: 0
 --- !u!1 &1436869080
 GameObject:
   m_ObjectHideFlags: 0
@@ -6296,9 +6725,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1441125488
 GameObject:
   m_ObjectHideFlags: 0
@@ -6363,7 +6793,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441125488}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -6423,9 +6853,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1444914507
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,7 +6920,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444914507}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -6626,7 +7057,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478123730}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -6683,14 +7114,15 @@ MonoBehaviour:
   possiblePaths:
   - target: {fileID: 123219389}
     active: 1
-  - target: {fileID: 1902559601}
+  - target: {fileID: 1415856862}
     active: 0
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1485571078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6754,7 +7186,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485571078}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -6859,7 +7291,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521356325}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -6968,7 +7400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.96247923, y: 0.94400007}
   m_AnchorMax: {x: 0.9923542, y: 0.99200004}
-  m_AnchoredPosition: {x: 0.099975586, y: -0.6000061}
+  m_AnchoredPosition: {x: 0.099975586, y: -0.5999756}
   m_SizeDelta: {x: 1863, y: 1028}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1550505335
@@ -7128,7 +7560,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577567265}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -7234,7 +7666,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590598862}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -7296,9 +7728,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1616506127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7446,7 +7879,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664129032}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -7503,14 +7936,15 @@ MonoBehaviour:
   possiblePaths:
   - target: {fileID: 2057924376}
     active: 1
-  - target: {fileID: 852350046}
+  - target: {fileID: 1713369933}
     active: 0
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1701524726
 GameObject:
   m_ObjectHideFlags: 0
@@ -7575,7 +8009,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701524726}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -7635,9 +8069,66 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
+--- !u!1 &1713369932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1713369933}
+  - component: {fileID: 1713369934}
+  m_Layer: 0
+  m_Name: Illusion_Block Base1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1713369933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713369932}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 49494695}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1713369934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713369932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86bbd21451db7bb49bcda2251b119fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possiblePaths:
+  - target: {fileID: 852350046}
+    active: 1
+  - target: {fileID: 1664129033}
+    active: 1
+  previousBlock: {fileID: 0}
+  walkPointOffset: 0.5
+  stairOffset: 0.4
+  walkPointSpeed: 0.5
+  stairSpeed: 1.5
+  isStair: 0
+  movingGround: 0
 --- !u!1 &1771146326
 GameObject:
   m_ObjectHideFlags: 0
@@ -7733,7 +8224,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798698887}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -7795,9 +8286,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1807176274
 GameObject:
   m_ObjectHideFlags: 0
@@ -7809,7 +8301,7 @@ GameObject:
   - component: {fileID: 1807176275}
   - component: {fileID: 1807176278}
   - component: {fileID: 1807176277}
-  - component: {fileID: 1807176276}
+  - component: {fileID: 1807176280}
   - component: {fileID: 1807176279}
   m_Layer: 0
   m_Name: base3 8
@@ -7833,27 +8325,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 417165303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1807176276
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807176274}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1807176277
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7862,7 +8333,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807176274}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -7919,21 +8390,43 @@ MonoBehaviour:
   possiblePaths:
   - target: {fileID: 466364552}
     active: 1
-  - target: {fileID: 697761831}
+  - target: {fileID: 122813132}
     active: 0
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
+--- !u!65 &1807176280
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807176274}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Center: {x: -0.00000047683716, y: 0, z: 0.00000047683716}
 --- !u!1001 &1812446264
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1300591130}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 76a1afac9eccbda4987f7af94f5779c2,
         type: 3}
@@ -7958,7 +8451,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 76a1afac9eccbda4987f7af94f5779c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.73
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 76a1afac9eccbda4987f7af94f5779c2,
         type: 3}
@@ -7973,7 +8466,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 76a1afac9eccbda4987f7af94f5779c2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 76a1afac9eccbda4987f7af94f5779c2,
         type: 3}
@@ -7999,6 +8492,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 76a1afac9eccbda4987f7af94f5779c2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 76a1afac9eccbda4987f7af94f5779c2,
         type: 3}
@@ -8087,7 +8585,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821381508}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -8255,9 +8753,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1867971453
 GameObject:
   m_ObjectHideFlags: 0
@@ -8388,9 +8887,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &1902559600
 GameObject:
   m_ObjectHideFlags: 0
@@ -8455,7 +8955,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902559600}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -8514,14 +9014,91 @@ MonoBehaviour:
     active: 1
   - target: {fileID: 105148291}
     active: 1
-  - target: {fileID: 1478123731}
+  - target: {fileID: 1415856862}
     active: 0
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
+--- !u!1 &1922391687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1922391688}
+  - component: {fileID: 1922391690}
+  - component: {fileID: 1922391689}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1922391688
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922391687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1231286}
+  m_Father: {fileID: 965696445}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1922391689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922391687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1922391690
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922391687}
+  m_CullTransparentMesh: 1
 --- !u!1 &1970801460
 GameObject:
   m_ObjectHideFlags: 0
@@ -8586,7 +9163,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970801460}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -8643,14 +9220,15 @@ MonoBehaviour:
   possiblePaths:
   - target: {fileID: 341751268}
     active: 1
-  - target: {fileID: 436457824}
+  - target: {fileID: 463407513}
     active: 0
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1001 &1983468065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8737,6 +9315,11 @@ PrefabInstance:
     - target: {fileID: 8096810094643566231, guid: df7e0b17bf12eb144ae562b0b13e42a4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601341486457324150, guid: df7e0b17bf12eb144ae562b0b13e42a4,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8601341486457324150, guid: df7e0b17bf12eb144ae562b0b13e42a4,
@@ -8859,7 +9442,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057924375}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -8921,9 +9504,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &2061269906
 GameObject:
   m_ObjectHideFlags: 0
@@ -8988,7 +9572,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061269906}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -9050,9 +9634,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!1 &2106038305
 GameObject:
   m_ObjectHideFlags: 0
@@ -9080,14 +9665,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106038305}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 7, z: 3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5, y: 1, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 190867291}
   - {fileID: 650257397}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1300591130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2106038309
 MonoBehaviour:
@@ -9109,9 +9694,10 @@ MonoBehaviour:
   previousBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
+  walkPointSpeed: 1
+  stairSpeed: 1.5
   isStair: 0
   movingGround: 0
-  isButton: 0
 --- !u!65 &2106038310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9191,7 +9777,7 @@ Transform:
   m_GameObject: {fileID: 2111594756}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 6.5, z: 3}
+  m_LocalPosition: {x: -4, y: 6.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9226,6 +9812,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3431869221113007456, guid: 76a1afac9eccbda4987f7af94f5779c2, type: 3}
+--- !u!4 &2138287256 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 76a1afac9eccbda4987f7af94f5779c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 448828022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2143383804
 GameObject:
   m_ObjectHideFlags: 0
@@ -9269,7 +9861,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143383804}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -9407,7 +9999,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7004328203351778961}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -14417,7 +15009,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8323147998371319185}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -14478,7 +15070,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533294958940489495}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -14690,7 +15282,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.34223923
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -14699,7 +15291,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.3483469
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -14875,9 +15467,10 @@ MonoBehaviour:
   numberOfReflection: 3
   maxDistance: 35
   SnapTiming: 0.2
-  wantToHitLaserBeamLayer:
+  laserBeamHitLayer:
     serializedVersion: 2
     m_Bits: 256
+  sphereSize: 0.6
 --- !u!65 &8897391795452795742
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14927,6 +15520,3 @@ SceneRoots:
   - {fileID: 2111594758}
   - {fileID: 229741286}
   - {fileID: 1300591130}
-  - {fileID: 1812446264}
-  - {fileID: 448828022}
-  - {fileID: 2106038308}

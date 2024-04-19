@@ -12,7 +12,8 @@ public class Laser : MonoBehaviour
     [SerializeField] private int numberOfReflection = 1;
     [SerializeField] private float maxDistance =10;
     [SerializeField] private float SnapTiming = 0.2f;
-    [SerializeField] private LayerMask wantToHitLaserBeamLayer;
+    [SerializeField] private LayerMask laserBeamHitLayer;
+    [SerializeField] private float sphereSize = 1;
     private Lever lever;
     private bool isPlayerInTrigger,turning;
     
@@ -26,7 +27,7 @@ public class Laser : MonoBehaviour
     
     private void Update()
     {
-         isPlayerInTrigger = Physics.CheckSphere(transform.position, 1, LayerMask.GetMask("Player"));
+         isPlayerInTrigger = Physics.CheckSphere(transform.position, sphereSize, LayerMask.GetMask("Player"));
          
          if (Input.GetMouseButtonDown(0))
          {
@@ -74,7 +75,7 @@ public class Laser : MonoBehaviour
 
     private bool CheckHits(ref Ray ray, ref float remainLength)
     {
-        if (Physics.Raycast(ray.origin, ray.direction, out var hit, remainLength, wantToHitLaserBeamLayer))
+        if (Physics.Raycast(ray.origin, ray.direction, out var hit, remainLength, laserBeamHitLayer))
         {
             ObjectToHit(hit);
             lineRenderer.positionCount += 1; //increase the position count
@@ -104,22 +105,30 @@ public class Laser : MonoBehaviour
 
     private Vector3 SnapRotate()
     {
-        Vector3 currentRotation = gameObject.transform.GetChild(1).transform.eulerAngles;
-        Vector3 snapRotation = new Vector3(0, 0, 0);
-        if (currentRotation.y < 45) snapRotation = new Vector3(0, 90,0);
-        
-        else if (currentRotation.y < 135) snapRotation = new Vector3(0, 180, 0);
-       
-        else if (currentRotation.y < 225) snapRotation = new Vector3(0, 270, 0);
-        
-        else if (currentRotation.y < 315) snapRotation = new Vector3(0, 0, 0);
+        var currentRotation = gameObject.transform.GetChild(1).transform.eulerAngles;
+        var snapRotation = new Vector3(0, 0, 0);
+        switch (currentRotation.y)
+        {
+            case < 45:
+                snapRotation = new Vector3(0, 90,0);
+                break;
+            case < 135:
+                snapRotation = new Vector3(0, 180, 0);
+                break;
+            case < 225:
+                snapRotation = new Vector3(0, 270, 0);
+                break;
+            case < 315:
+                snapRotation = new Vector3(0, 0, 0);
+                break;
+        }
         return snapRotation;
     }
     
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, 1);
+        Gizmos.DrawWireSphere(transform.position, sphereSize);
     }
 
 }

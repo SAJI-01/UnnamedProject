@@ -11,12 +11,11 @@ public class PlayerMovement : MonoBehaviour
     [Space] public Transform currentCube;
     public Transform clickedCube;
     public Transform indicator;
+    
 
     [Space] public List<Transform> ToPath = new List<Transform>();
 
-    Vector3 leverOnRotation;
-
-    // private Vector2 delta;
+    
     private void Start()
     {
         RayCastDown();
@@ -29,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            var mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(mouseRay, out var mouseHit))
             {
 
@@ -132,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         for (int i = ToPath.Count - 1; i > 0; i--)
         {
 
-            float timing = ToPath[i].GetComponent<WalkablePath>().isStair ? 1.5f : 1;
+            float timing = ToPath[i].GetComponent<WalkablePath>().isStair ? ToPath[i].GetComponent<WalkablePath>().stairSpeed : ToPath[i].GetComponent<WalkablePath>().walkPointSpeed;
             sequence.Append(transform.DOMove(ToPath[i].GetComponent<WalkablePath>().GetWalkPoint(), .2f * timing)
                 .SetEase(Ease.Linear));
 
@@ -175,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnDrawGizmos()
     {
-        Gizmos.color = Color.magenta;
+        Gizmos.color = Color.blue;
         Ray ray = new Ray(transform.GetChild(0).position, -transform.up);
         Gizmos.DrawRay(ray);
     }

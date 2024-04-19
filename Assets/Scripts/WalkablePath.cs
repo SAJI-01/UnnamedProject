@@ -17,17 +17,23 @@ public class WalkablePath : MonoBehaviour
     public float stairOffset = .4f;
     
     [Space]
+    [Header("Speeds")]
+    public float walkPointSpeed = 1f;
+    public float stairSpeed = 1.5f;
+    
+    [Space]
     [Header("Booleans")]
     public bool isStair = false;
     public bool movingGround = false;
-    public bool isButton;
+    //public bool isButton;
+    
     
     #endregion
 
     public Vector3 GetWalkPoint()
     {
-        float stair = isStair ? stairOffset : 0;                                                                                      // change the offset for vector3 position to illusion
-        return transform.position + transform.up * walkPointOffset - transform.up * stair; //return the walk point
+        float stair = isStair ? stairOffset : 0; // change the offset for vector3 position to illusion
+        return transform.position + transform.up  * walkPointOffset - transform.up * stair; //return the walk point
     }
     
     private void OnDrawGizmos()
@@ -42,6 +48,8 @@ public class WalkablePath : MonoBehaviour
             Gizmos.color = p.active ? Color.black : Color.clear;
             Gizmos.DrawLine(GetWalkPoint(), p.target.GetComponent<WalkablePath>().GetWalkPoint());
         }
+        
+
     }
 }
 

@@ -38,47 +38,40 @@ public class CameraMovement : MonoBehaviour
     public void OnRotate(InputAction.CallbackContext context)
     {
         if (isBusy) return;
-        isRotating = context.performed;
-        isFreeRotation = context.performed;
+        isRotating = context.started || context.performed;
+        isFreeRotation = context.started || context.performed;
 
-        if (context.canceled) 
+        if (context.canceled && !uiManager.isFreeView)
         {
-            if (!uiManager.isFreeView)
-            {
                 lastRotation = transform.rotation;
                 isBusy = true;
                 SnapRotation();
-            }
         }
-        else if(context.canceled)
+        else if(context.canceled && uiManager.isFreeView)
         {
-            if (uiManager.isFreeView && isFreeRotation)
-            {
                 isBusy = true;
-                /*SmoothFreeRotation();*/
-            }
+                SmoothRotation();
         }
     }
 
     private void Update() 
     {
         eulersAngle = transform.rotation;
+        
         if (isRotating && !uiManager.isFreeView )
         {
             transform.Rotate(new Vector3(xRotation, delta.x * Vector3.right.x * rotationSpeed, 0.0f));
             transform.rotation = Quaternion.Euler(xRotation, transform.rotation.eulerAngles.y, 0.0f);
         }
         
-        if (isRotating && uiManager.isFreeView)
+        if (isFreeRotation && uiManager.isFreeView)
         {
-            transform.Rotate(new Vector3(-delta.y * Vector3.up.y * rotationSpeed, delta.x * Vector3.right.x * rotationSpeed, 0.0f));
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+            transform.rotation = Quaternion.Euler(-delta.y + transform.rotation.eulerAngles.x + rotationSpeed *Vector3.up.y, transform.rotation.eulerAngles.y + delta.x * Vector3.right.x * rotationSpeed, 0.0f);
         }
         if (uiManager.isFreeViewInverse)
         {
             transform.DORotate(
-                    new Vector3(lastRotation.eulerAngles.x, lastRotation.eulerAngles.y, lastRotation.eulerAngles.z),
-                    0.75f).SetEase(Ease.OutSine);
+                new Vector3(lastRotation.eulerAngles.x, lastRotation.eulerAngles.y, lastRotation.eulerAngles.z), 0.75f).SetEase(Ease.OutSine);
             uiManager.isFreeViewInverse = false;
         }
     }
@@ -93,8 +86,6 @@ public class CameraMovement : MonoBehaviour
         });
     }
     
-    
-    
     private Vector3 SnappedVector()
     {
         var endValue = 0.0f;
@@ -108,7 +99,10 @@ public class CameraMovement : MonoBehaviour
             _ => 315
             
         };
-
         return new Vector3(xRotation, endValue, 0.0f);
+    }
+    
+    private void SmoothRotation()
+    {
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,11 +31,9 @@ public class GameManager : MonoBehaviour
                     count++;
                 }
             }
-
             foreach (SinglePath sp in pc.paths)
                 sp.walkablePathBlock.possiblePaths[sp.index].active = (count == pc.conditions.Count);
         }
-
         if (player.walking) return; //if the player is walking, don't do anything
 
 
