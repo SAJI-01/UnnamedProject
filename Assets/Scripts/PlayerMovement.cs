@@ -101,11 +101,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        visitedCubes.Add(current);
         if (nextCubes.Any()) //Checks if there are any elements in the list
         {
             ExploreCube(nextCubes, visitedCubes);
         }
+
+        visitedCubes.Add(current);
     }
 
     private void BuildPath()
