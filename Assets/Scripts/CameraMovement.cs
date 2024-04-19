@@ -50,7 +50,6 @@ public class CameraMovement : MonoBehaviour
         else if(context.canceled && uiManager.isFreeView)
         {
                 isBusy = true;
-                SmoothRotation();
         }
     }
 
@@ -66,7 +65,8 @@ public class CameraMovement : MonoBehaviour
         
         if (isFreeRotation && uiManager.isFreeView)
         {
-            transform.rotation = Quaternion.Euler(-delta.y + transform.rotation.eulerAngles.x + rotationSpeed *Vector3.up.y, transform.rotation.eulerAngles.y + delta.x * Vector3.right.x * rotationSpeed, 0.0f);
+            transform.Rotate(new Vector3(-delta.y * Vector3.up.y * rotationSpeed, delta.x * Vector3.right.x * rotationSpeed, 0.0f));
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         }
         if (uiManager.isFreeViewInverse)
         {
@@ -102,7 +102,4 @@ public class CameraMovement : MonoBehaviour
         return new Vector3(xRotation, endValue, 0.0f);
     }
     
-    private void SmoothRotation()
-    {
-    }
 }

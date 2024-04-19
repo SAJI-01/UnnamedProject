@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
         for (int i = ToPath.Count - 1; i > 0; i--)
         {
 
-            float timing = ToPath[i].GetComponent<WalkablePath>().isStair ? ToPath[i].GetComponent<WalkablePath>().stairSpeed : ToPath[i].GetComponent<WalkablePath>().walkPointSpeed;
+            float timing = ToPath[i].GetComponent<WalkablePath>().isStair ? ToPath[i].GetComponent<WalkablePath>().stairSpeed : ToPath[i].GetComponent<WalkablePath>().walkPointSpeed; //change it
             sequence.Append(transform.DOMove(ToPath[i].GetComponent<WalkablePath>().GetWalkPoint(), .2f * timing)
                 .SetEase(Ease.Linear));
 
