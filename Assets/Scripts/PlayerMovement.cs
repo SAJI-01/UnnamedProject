@@ -84,8 +84,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void ExploreCube(List<Transform> nextCubes, List<Transform> visitedCubes)
     {
-        Transform current = nextCubes.First(); //Gets the first element of the list
+        Transform current = nextCubes.First();
         nextCubes.Remove(current);
+
         if (current == clickedCube)
         {
             return;
@@ -93,20 +94,19 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (WalkPath path in current.GetComponent<WalkablePath>().possiblePaths)
         {
-            if (!visitedCubes.Contains(path.target) &&
-                path.active) //Checks if player is not in lastCube and WalkPath is active
+            if (!visitedCubes.Contains(path.target) && path.active)
             {
-                nextCubes.Add(path.target); //
+                nextCubes.Add(path.target);
                 path.target.GetComponent<WalkablePath>().previousBlock = current;
             }
         }
 
-        if (nextCubes.Any()) //Checks if there are any elements in the list
+        visitedCubes.Add(current);
+
+        if (nextCubes.Any())
         {
             ExploreCube(nextCubes, visitedCubes);
         }
-
-        visitedCubes.Add(current);
     }
 
     private void BuildPath()

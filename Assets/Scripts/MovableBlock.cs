@@ -41,8 +41,7 @@ public class MovableBlock : MonoBehaviour
         { 
             l.previousBlocks.GetComponent<WalkablePath>().possiblePaths[1].active = false;
             player.gameObject.transform.DOMoveX(transform.position.x + 2, 2).SetEase(Ease.InOutCubic);
-            hit.transform.GetComponent<MovableBlock>().transform.DOMoveX(transform.position.x + 2, 2)
-                .SetEase(Ease.InOutCubic).onComplete = () =>
+            hit.transform.GetComponent<MovableBlock>().transform.DOMoveX(transform.position.x + 2, 2).SetEase(Ease.InOutCubic).onComplete = () =>
             {
                 isMoveAble = false;
                 l.objectToToggle.GetComponent<WalkablePath>().possiblePaths[0].active =
