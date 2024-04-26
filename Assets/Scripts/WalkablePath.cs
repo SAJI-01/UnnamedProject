@@ -11,10 +11,13 @@ public class WalkablePath : MonoBehaviour
     [Space]
     public Transform previousBlock;
     
+    
+    
     [Space]
     [Header("Offsets")]
     public float walkPointOffset = .5f;
     public float stairOffset = .4f;
+    
     
     [Space]
     [Header("Speeds")]
@@ -23,16 +26,16 @@ public class WalkablePath : MonoBehaviour
     
     [Space]
     [Header("Booleans")]
-    public bool isStair = false;
-    public bool movingGround = false;
-    //public bool isButton;
+    
+    public bool isStair;
+    public bool dontRotatePlayerInParticularBlock;
     
     
     #endregion
 
     public Vector3 GetWalkPoint()
     {
-        float stair = isStair ? stairOffset : 0; // change the offset for vector3 position to illusion
+        float stair = isStair ? stairOffset : 0; 
         return transform.position + transform.up  * walkPointOffset - transform.up * stair; //return the walk point
     }
     

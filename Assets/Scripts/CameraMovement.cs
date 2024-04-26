@@ -1,22 +1,24 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
+using UnityEngine.Serialization;
 
 
 public class CameraMovement : MonoBehaviour
 {
     #region Variables
-    [SerializeField] private Quaternion eulersAngle;
+    [SerializeField] private Quaternion eulerAngle;
     private UIManager uiManager;
     private PlayerMovement playerMovement;
     private Vector2 delta;
     
     private bool isFreeRotation;
-    private bool isRotating;
+    [HideInInspector] public bool isRotating;
     private bool isBusy;
     
     private float xRotation;
     private Quaternion lastRotation;
+    
     
     [Header("Settings")]
     [SerializeField] private float rotationSpeed = 0.1f;
@@ -25,7 +27,7 @@ public class CameraMovement : MonoBehaviour
     private void Awake()
     {
         xRotation = transform.rotation.eulerAngles.x;
-        uiManager = FindObjectOfType<UIManager>();
+        uiManager = GetComponent<UIManager>();
         lastRotation = transform.rotation;
     }
     
@@ -38,9 +40,8 @@ public class CameraMovement : MonoBehaviour
     public void OnRotate(InputAction.CallbackContext context)
     {
         if (isBusy) return;
-        isRotating = context.started || context.performed;
-        isFreeRotation = context.started || context.performed;
-
+            isRotating = context.started || context.performed;
+            isFreeRotation = context.started || context.performed;
         if (context.canceled && !uiManager.isFreeView)
         {
                 lastRotation = transform.rotation;
@@ -50,12 +51,13 @@ public class CameraMovement : MonoBehaviour
         else if(context.canceled && uiManager.isFreeView)
         {
                 isBusy = true;
+                SmoothRotation();
         }
     }
 
     private void Update() 
     {
-        eulersAngle = transform.rotation;
+        eulerAngle = transform.rotation;
         
         if (isRotating && !uiManager.isFreeView )
         {
@@ -66,7 +68,6 @@ public class CameraMovement : MonoBehaviour
         if (isFreeRotation && uiManager.isFreeView)
         {
             transform.Rotate(new Vector3(-delta.y * Vector3.up.y * rotationSpeed, delta.x * Vector3.right.x * rotationSpeed, 0.0f));
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         }
         if (uiManager.isFreeViewInverse)
         {
@@ -74,6 +75,16 @@ public class CameraMovement : MonoBehaviour
                 new Vector3(lastRotation.eulerAngles.x, lastRotation.eulerAngles.y, lastRotation.eulerAngles.z), 0.75f).SetEase(Ease.OutSine);
             uiManager.isFreeViewInverse = false;
         }
+    }
+    
+    private void SmoothRotation()
+    {
+        transform.DORotate(new Vector3(transform.rotation.eulerAngles.x,
+            transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z),
+            0f).SetEase(Ease.Linear).onComplete = () =>
+        {
+            isBusy = false;
+        };
     }
     
 
