@@ -1,14 +1,21 @@
 ﻿using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    
+
     public PlayerMovement player;
     public List<PathCondition> pathConditions = new List<PathCondition>();
-    public WalkablePath walkablePath;
+    public List<Enabler> enablers = new List<Enabler>();
+
+
+
+
     private void Awake()
     {
         instance = this;
@@ -17,57 +24,106 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        /*foreach (var path in FindObjectsOfType<WalkablePath>())
-        {
-            path.possiblePa
-        }*/
-        foreach (PathCondition pc in pathConditions)
-        {
-            int count = 0;
-            for (int i = 0; i < pc.conditions.Count; i++)
-            {
-                if (pc.conditions[i].conditionObject.eulerAngles == pc.conditions[i].eulerAngle)
-                {
-                    count++;
-                }
-            }
-            foreach (SinglePath sp in pc.paths)
-                sp.walkablePathBlock.possiblePaths[sp.index].active = (count == pc.conditions.Count);
-        }
-        if (player.walking) return; //if the player is walking, don't do anything
+        PathConditions();
 
 
+
+        if (player.walking) return;
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
         }
     }
-    
+
+
+    private void PathConditions()
+    {
+        foreach (var pc in pathConditions)
+        {
+            var count = 0;
+            for (var i = 0; i < pc.conditions.Count; i++)
+                if (pc.conditions[i].conditionObject.eulerAngles == pc.conditions[i].eulerAngle)
+                    count++;
+
+            foreach (var sp in pc.paths)
+                sp.walkablePathBlock.possiblePaths[sp.index].active = count == pc.conditions.Count;
+        }
+    }
+
+    public void Link(bool mbLaserStart, bool mbLaserEnd, bool mbNormalStart, bool mbNormalEnd)
+    {
+        foreach (var enabler in enablers)
+        {
+            var count = 0;
+            foreach (var ec in enabler.conditions)
+            {
+                if (ec.startOfMbWithLaser && mbLaserStart) count++;
+                if (ec.endOfMbWithLaser && mbLaserEnd) count++;
+                if (ec.startOfNormalMb && mbNormalStart) count++;
+                if (ec.endOfNormalMb && mbNormalEnd) count++;
+            }
+
+            foreach (var ep in enabler.paths)
+            {
+                if (ep.link)
+                    ep.walkablePathBlock.possiblePaths[ep.index].active = count == enabler.conditions.Count;
+                else if(ep.unLink)
+                    ep.walkablePathBlock.possiblePaths[ep.index].active = count != enabler.conditions.Count;
+            }
+        }
+    }
+
+    [System.Serializable]
+    public class PathCondition
+    {
+        public string pathConditionName;
+        public List<Condition> conditions;
+        public List<SinglePath> paths;
+    }
+
+    [System.Serializable]
+    public class Condition
+    {
+        public Transform conditionObject;
+        public Vector3 eulerAngle;
+
+    }
+
+    [System.Serializable]
+    public class SinglePath
+    {
+        public WalkablePath walkablePathBlock;
+        public int index; //index of element in the block order
+    }
+
+    [System.Serializable]
+    public class Enabler
+    {
+        public string enablerName;
+        public List<EnablerCondition> conditions;
+        public List<EnablerPath> paths;
+    }
+
+    [System.Serializable]
+    public class EnablerPath
+    {
+        public bool link,unLink;
+        public WalkablePath walkablePathBlock;
+        public int index;
+    }
+
+    [System.Serializable]
+    public class EnablerCondition
+    {
+        public bool startOfMbWithLaser = false;
+        public bool endOfMbWithLaser = false;
+        public bool startOfNormalMb = false;
+        public bool endOfNormalMb = false;
+    }
 }
 
-[System.Serializable]
-public class PathCondition
-{
-    public string pathConditionName;
-    public List<Condition> conditions;//conditions to check
-    public List<SinglePath> paths;//paths to change
-}
 
-[System.Serializable]
-public class Condition
-{
-    public Transform conditionObject;
-    public Vector3 eulerAngle;
-
-}
-
-[System.Serializable]
-public class SinglePath
-{
-    public WalkablePath walkablePathBlock;
-    public int index;//index of element in the block order
-}
 
 
 

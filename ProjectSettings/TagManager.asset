@@ -6,9 +6,11 @@ TagManager:
   tags:
   - DisableObject
   - Laser
-  - MoveAbleObject
-  - Mirror
   - Lever
+  - ReflectiveSurface
+  - HitBoxOfMovableObject
+  - normalMovableBlock
+  - movableBlockWithLaser
   layers:
   - Default
   - TransparentFX
