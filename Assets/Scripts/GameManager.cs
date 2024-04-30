@@ -116,10 +116,10 @@ public class GameManager : MonoBehaviour
     [System.Serializable]
     public class EnablerCondition
     {
-        public bool startOfMbWithLaser = false;
-        public bool endOfMbWithLaser = false;
-        public bool startOfNormalMb = false;
-        public bool endOfNormalMb = false;
+        public bool startOfMbWithLaser;
+        public bool endOfMbWithLaser;
+        public bool startOfNormalMb;
+        public bool endOfNormalMb;
     }
 }
 

@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
-using UnityEngine.Serialization;
 
 //testing
 
@@ -27,8 +26,9 @@ public class CameraMovement : MonoBehaviour
 
     private void Awake()
     {
+        playerMovement = FindObjectOfType<PlayerMovement>();
         xRotation = transform.rotation.eulerAngles.x;
-        uiManager = GetComponent<UIManager>();
+        uiManager = FindObjectOfType<UIManager>();
         lastRotation = transform.rotation;
     }
     
@@ -58,30 +58,37 @@ public class CameraMovement : MonoBehaviour
 
     private void Update() 
     {
-        eulerAngle = transform.rotation;
+        var t = transform;
+        var pt = playerMovement.transform;
+        eulerAngle = t.rotation;
         
         if (isRotating && !uiManager.isFreeView )
         {
-            transform.Rotate(new Vector3(xRotation, delta.x * Vector3.right.x * rotationSpeed, 0.0f));
-            transform.rotation = Quaternion.Euler(xRotation, transform.rotation.eulerAngles.y, 0.0f);
+            t.Rotate(new Vector3(xRotation, delta.x * Vector3.right.x * rotationSpeed, 0.0f));
+            t.rotation = Quaternion.Euler(xRotation, t.rotation.eulerAngles.y, 0.0f);
         }
         
         if (isFreeRotation && uiManager.isFreeView)
         {
-            transform.Rotate(new Vector3(-delta.y * Vector3.up.y * rotationSpeed, delta.x * Vector3.right.x * rotationSpeed, 0.0f));
+            t.Rotate(new Vector3(-delta.y * Vector3.up.y * rotationSpeed, delta.x * Vector3.right.x * rotationSpeed, 0.0f));
         }
         if (uiManager.isFreeViewInverse)
         {
-            transform.DORotate(
+            t.DORotate(
                 new Vector3(lastRotation.eulerAngles.x, lastRotation.eulerAngles.y, lastRotation.eulerAngles.z), 0.75f).SetEase(Ease.OutSine);
             uiManager.isFreeViewInverse = false;
         }
+        var position = new Vector3(pt.position.x,pt.position.y + 1.5f, pt.position.z);
+
+        t.position = Vector3.Lerp(t.position, position, 0.1f);
+        
     }
     
     private void SmoothRotation()
     {
-        transform.DORotate(new Vector3(transform.rotation.eulerAngles.x,
-            transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z),
+        var t = transform;
+        t.DORotate(new Vector3(t.rotation.eulerAngles.x,
+            t.rotation.eulerAngles.y, t.rotation.eulerAngles.z),
             0f).SetEase(Ease.Linear).onComplete = () =>
         {
             isBusy = false;
