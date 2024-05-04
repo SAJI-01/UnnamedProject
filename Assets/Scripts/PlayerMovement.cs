@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
 
         RayCastDown();
         //transform.parent = CurrentCube.GetComponent<WalkablePath>().movingGround ? CurrentCube.parent : null;
@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
                 ? toPath[i].GetComponent<WalkablePath>().stairSpeed
                 : toPath[i].GetComponent<WalkablePath>().walkPointSpeed; //change it
             
-            sequence.Append(transform.DOMove(toPath[i].GetComponent<WalkablePath>().GetWalkPoint(), .7f * timing).SetEase(Ease.InOutQuart));
+            sequence.Append(transform.DOMove(toPath[i].GetComponent<WalkablePath>().GetWalkPoint(), .1f * timing).SetEase(Ease.Linear));
             //sequence.Append(transform.DOMove(toPath[i].GetComponent<WalkablePath>().GetWalkPoint(), .1f * timing).SetEase(Ease.Linear));
             
 
