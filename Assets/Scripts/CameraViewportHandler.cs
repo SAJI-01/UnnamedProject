@@ -20,103 +20,36 @@ public class CameraViewportHandler : MonoBehaviour
     private float _height;
 
     //*** bottom screen
-    private Vector3 _bl;
-    private Vector3 _bc;
-
-    private Vector3 _br;
+    private Vector3 bl;
+    private Vector3 bc;
+    private Vector3 br;
 
     //*** middle screen
-    private Vector3 _ml;
-    private Vector3 _mc;
-
-    private Vector3 _mr;
+    private Vector3 ml;
+    private Vector3 mc;
+    private Vector3 mr;
 
     //*** top screen
-    private Vector3 _tl;
-    private Vector3 _tc;
-    private Vector3 _tr;
+    private Vector3 tl;
+    private Vector3 tc;
+    private Vector3 tr;
     #endregion
 
     #region PROPERTIES
-    public float Width
-    {
-        get
-        {
-            return _width;
-        }
-    }
-    public float Height
-    {
-        get
-        {
-            return _height;
-        }
-    }
+    public float Width => _width;
+    public float Height => _height;
 
     // helper points:
-    public Vector3 BottomLeft
-    {
-        get
-        {
-            return _bl;
-        }
-    }
-    public Vector3 BottomCenter
-    {
-        get
-        {
-            return _bc;
-        }
-    }
-    public Vector3 BottomRight
-    {
-        get
-        {
-            return _br;
-        }
-    }
-    public Vector3 MiddleLeft
-    {
-        get
-        {
-            return _ml;
-        }
-    }
-    public Vector3 MiddleCenter
-    {
-        get
-        {
-            return _mc;
-        }
-    }
-    public Vector3 MiddleRight
-    {
-        get
-        {
-            return _mr;
-        }
-    }
-    public Vector3 TopLeft
-    {
-        get
-        {
-            return _tl;
-        }
-    }
-    public Vector3 TopCenter
-    {
-        get
-        {
-            return _tc;
-        }
-    }
-    public Vector3 TopRight
-    {
-        get
-        {
-            return _tr;
-        }
-    }
+    public Vector3 BottomLeft => bl;
+    public Vector3 BottomCenter => bc;
+    public Vector3 BottomRight => br;
+    public Vector3 MiddleLeft => ml;
+    public Vector3 MiddleCenter => mc;
+    public Vector3 MiddleRight => mr;
+    public Vector3 TopLeft => tl;
+    public Vector3 TopCenter => tc;
+    public Vector3 TopRight => tr;
+
     #endregion
 
     #region METHODS
@@ -128,8 +61,7 @@ public class CameraViewportHandler : MonoBehaviour
 
     private void ComputeResolution()
     {
-        float leftX, rightX, topY, bottomY;
-
+        
         if (constraint == Constraint.Landscape)
         {
             camera.orthographicSize = 1f / camera.aspect * UnitsSize / 2f;
@@ -142,27 +74,26 @@ public class CameraViewportHandler : MonoBehaviour
         _height = 2f * camera.orthographicSize;
         _width = _height * camera.aspect;
 
-        float cameraX, cameraY;
-        cameraX = camera.transform.position.x;
-        cameraY = camera.transform.position.y;
+        var cameraX = camera.transform.position.x;
+        var cameraY = camera.transform.position.y;
 
-        leftX = cameraX - _width / 2;
-        rightX = cameraX + _width / 2;
-        topY = cameraY + _height / 2;
-        bottomY = cameraY - _height / 2;
+        var leftX = cameraX - _width / 2;
+        var rightX = cameraX + _width / 2;
+        var topY = cameraY + _height / 2;
+        var bottomY = cameraY - _height / 2;
 
         //*** bottom
-        _bl = new Vector3(leftX, bottomY, 0);
-        _bc = new Vector3(cameraX, bottomY, 0);
-        _br = new Vector3(rightX, bottomY, 0);
+        bl = new Vector3(leftX, bottomY, 0);
+        bc = new Vector3(cameraX, bottomY, 0);
+        br = new Vector3(rightX, bottomY, 0);
         //*** middle
-        _ml = new Vector3(leftX, cameraY, 0);
-        _mc = new Vector3(cameraX, cameraY, 0);
-        _mr = new Vector3(rightX, cameraY, 0);
+        ml = new Vector3(leftX, cameraY, 0);
+        mc = new Vector3(cameraX, cameraY, 0);
+        mr = new Vector3(rightX, cameraY, 0);
         //*** top
-        _tl = new Vector3(leftX, topY, 0);
-        _tc = new Vector3(cameraX, topY, 0);
-        _tr = new Vector3(rightX, topY, 0);
+        tl = new Vector3(leftX, topY, 0);
+        tc = new Vector3(cameraX, topY, 0);
+        tr = new Vector3(rightX, topY, 0);
     }
 
     private void Update()

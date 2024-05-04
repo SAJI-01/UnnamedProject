@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform clickedCube;
     public Transform indicator;
     private CameraMovement cameraMovement;
+    
 
 
     [Space] public List<Transform> toPath = new List<Transform>();
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
 
         RayCastDown();
         //transform.parent = CurrentCube.GetComponent<WalkablePath>().movingGround ? CurrentCube.parent : null;
@@ -141,7 +142,10 @@ public class PlayerMovement : MonoBehaviour
             var timing = toPath[i].GetComponent<WalkablePath>().isStair 
                 ? toPath[i].GetComponent<WalkablePath>().stairSpeed
                 : toPath[i].GetComponent<WalkablePath>().walkPointSpeed; //change it
-            sequence.Append(transform.DOMove(toPath[i].GetComponent<WalkablePath>().GetWalkPoint(), .05f * timing).SetEase(Ease.Linear));
+            
+            sequence.Append(transform.DOMove(toPath[i].GetComponent<WalkablePath>().GetWalkPoint(), .1f * timing).SetEase(Ease.Linear));
+            //sequence.Append(transform.DOMove(toPath[i].GetComponent<WalkablePath>().GetWalkPoint(), .1f * timing).SetEase(Ease.Linear));
+            
 
             /*if (!toPath[i].GetComponent<WalkablePath>().dontRotatePlayerInParticularBlock) //player rotation according to the path
             {
@@ -168,7 +172,8 @@ public class PlayerMovement : MonoBehaviour
 
         private void RayCastDown()
         {
-            Ray rayHit = new Ray(transform.GetChild(0).position, -transform.up);
+            var t = transform;
+            Ray rayHit = new Ray(t.GetChild(0).position, -t.up);
             if (Physics.Raycast(rayHit, out var hitPoint))
             {
                 if (hitPoint.transform.GetComponent<WalkablePath>() != null)
@@ -180,8 +185,9 @@ public class PlayerMovement : MonoBehaviour
 
         public void OnDrawGizmos()
         {
+            var t = transform;
             Gizmos.color = Color.blue;
-            Ray ray = new Ray(transform.GetChild(0).position, -transform.up);
+            Ray ray = new Ray(t.GetChild(0).position, -t.up);
             Gizmos.DrawRay(ray);
         }
     }

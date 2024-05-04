@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Splines;
 
 
@@ -9,19 +10,18 @@ public class MovableBlock : MonoBehaviour
     public bool normalBlock;
     [SerializeField] private Transform hitBox;
 
+    [SerializeField] private Vector3 wireBoxSize = new Vector3(0.2f, 1.034f, 1f);
+    [SerializeField] private Vector3 wireBoxPosition = new Vector3(0.4f, 0f, 0f);
 
-    [SerializeField] private Vector3 _wireBoxSize = new Vector3(0.200000003f, 1.03499997f, 1f);
-    [SerializeField] private Vector3 _wireBoxPosition = new Vector3(0.400000006f, 0f, 0f);
-    
-    public float time = 3f;
-    
+    private const float Speed = 2.97f;
+
     public SplineAnimate splineAnimate;
-    private PlayerMovement _player;
+    private PlayerMovement player;
     
     private void Awake()
     {
         splineAnimate.ElapsedTime = 3f;
-        _player = FindObjectOfType<PlayerMovement>();
+        player = FindObjectOfType<PlayerMovement>();
         if (normalBlock)
         {
             hitBox.GetComponent<BoxCollider>().enabled = false;hitBox.GetComponent<BoxCollider>().enabled = false;
@@ -32,7 +32,7 @@ public class MovableBlock : MonoBehaviour
     
     private void Update()
     {
-        isPlayer = Physics.CheckBox(transform.position + _wireBoxPosition, _wireBoxSize, Quaternion.identity, LayerMask.GetMask("Player"));
+        isPlayer = Physics.CheckBox(transform.position + wireBoxPosition, wireBoxSize, Quaternion.identity, LayerMask.GetMask("Player"));
         
         HandleMovement();
     }
@@ -52,9 +52,9 @@ public class MovableBlock : MonoBehaviour
         }
         if(splineAnimate.IsPlaying && isPlayer)
         {
-            _player.transform.position = splineAnimate.transform.position + Vector3.up + new Vector3(0, -0.5f, 0);
+            player.transform.position = splineAnimate.transform.position + Vector3.up + new Vector3(0, -0.5f, 0);
         }
-        if(splineAnimate.ElapsedTime >= time && !isLaserHit)
+        if(splineAnimate.ElapsedTime >= Speed && !isLaserHit)
         {
             splineAnimate.Pause();
             splineAnimate.ElapsedTime = 3f;
@@ -66,7 +66,7 @@ public class MovableBlock : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position + _wireBoxPosition, _wireBoxSize);
+        Gizmos.DrawWireCube(transform.position + wireBoxPosition, wireBoxSize);
         
     }
 }

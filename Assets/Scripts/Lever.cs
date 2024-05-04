@@ -1,7 +1,5 @@
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.Serialization;
-
 
 public class Lever : MonoBehaviour
 {
@@ -55,12 +53,10 @@ public class Lever : MonoBehaviour
         {
             laser.turnOnLaser = true;
         }
-        
-        if (objectToToggle.gameObject.CompareTag("normalMovableBlock"))
-        {
-            objectToToggle.SetActive(true);
-            GameManager.instance.Link(false, false,  true , false);
-        }
+
+        if (!objectToToggle.gameObject.CompareTag("normalMovableBlock")) return;
+        objectToToggle.SetActive(true);
+        GameManager.instance.Link(false, false,  true , false);
 
 
     }
