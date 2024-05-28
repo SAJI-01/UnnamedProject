@@ -35,7 +35,7 @@ public class Laser : MonoBehaviour
              if (Physics.Raycast(ray, out var hit))
              {
                  if (hit.transform == transform && isPlayerInSphere)
-                 {
+                 { 
                      gameObject.transform.GetChild(1).transform.DORotate(SnapRotate(), snapTiming).SetEase(Ease.OutBounce);
                      Invoke(nameof(LaserTurning), snapTiming);
                      isTurning = true;
@@ -91,7 +91,6 @@ public class Laser : MonoBehaviour
         }
 
         if (!hit.transform.CompareTag("HitBoxOfMovableObject")) return ray;
-        Debug.Log("Hit" + hit.transform.name);
         hit.transform.parent.GetComponent<MovableBlock>().isLaserHit = true;
         hit.transform.gameObject.transform.DOScale(new Vector3(.5f, .5f, .5f), 1f)
             .SetEase(Ease.InQuad).onComplete = () =>

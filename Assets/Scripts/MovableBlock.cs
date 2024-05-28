@@ -24,7 +24,7 @@ public class MovableBlock : MonoBehaviour
         player = FindObjectOfType<PlayerMovement>();
         if (normalBlock)
         {
-            hitBox.GetComponent<BoxCollider>().enabled = false;hitBox.GetComponent<BoxCollider>().enabled = false;
+            hitBox.GetComponent<BoxCollider>().enabled = false;hitBox.GetComponent<BoxCollider>().enabled = false; 
             hitBox.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             hitBox.transform.localPosition = new Vector3(0, 0.27f, 0);
         }
@@ -32,7 +32,8 @@ public class MovableBlock : MonoBehaviour
     
     private void Update()
     {
-        isPlayer = Physics.CheckBox(transform.position + wireBoxPosition, wireBoxSize, Quaternion.identity, LayerMask.GetMask("Player"));
+        isPlayer = Physics.CheckBox(transform.position + wireBoxPosition, 
+            wireBoxSize, Quaternion.identity, LayerMask.GetMask("Player"));
         
         HandleMovement();
     }
