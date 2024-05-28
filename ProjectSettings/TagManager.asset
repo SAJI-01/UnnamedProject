@@ -11,6 +11,7 @@ TagManager:
   - HitBoxOfMovableObject
   - normalMovableBlock
   - movableBlockWithLaser
+  - Button
   layers:
   - Default
   - TransparentFX
@@ -21,9 +22,9 @@ TagManager:
   - Illusion
   - Player
   - ReflectiveSurface
-  - 
-  - 
-  - 
+  - NoAffectPost
+  - Level
+  - Background
   - 
   - 
   - 

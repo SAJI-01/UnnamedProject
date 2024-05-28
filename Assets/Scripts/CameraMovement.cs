@@ -1,54 +1,67 @@
 using DG.Tweening;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class CameraMovement : MonoBehaviour
 {
     #region Variables
 
-    
-    private Vector2 delta;
-
-    private bool isFreeRotation;
-    [HideInInspector] public bool isRotating;
-    private bool isBusy;
-    private bool isMoving;
-
-    private float xRotation;
+    [FormerlySerializedAs("rotationSpeed")]
+    [Header("Settings")] 
+    public bool isRotating;
+    [SerializeField] private float isometricRotSpeed = 0.1f;
+    [SerializeField] private float zoomSpeed = 0.01f; 
+    [SerializeField] private float minCameraZoom = 7f;
+    [SerializeField] private float maxCameraZoom = 14f;
+    private const float XRotation = 35.264f;
+    private int endValue;
     private Transform t;
-
-
-    [Header("Settings")] [SerializeField] private float rotationSpeed = 0.1f;
+    private Vector2 delta;
+    private bool isBusy;
+    private PlayerMovement player;
+    
+    
+    
+    
 
     #endregion
 
     private void Awake()
     {
         t = transform;
-        xRotation = t.rotation.eulerAngles.x;
+        player = FindObjectOfType<PlayerMovement>();
     }
-
     
-
     private void Update()
     {
-        delta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        if (player.isWalking) return;
+        Zoom();
         OnRotate();
+        IsometricRotateCamera();
+    }
 
+    private void IsometricRotateCamera()
+    {
         if (!isRotating) return;
-        t.Rotate(new Vector3(xRotation, delta.x * Vector3.right.x * rotationSpeed, 0.0f));
-        t.rotation = Quaternion.Euler(xRotation, t.rotation.eulerAngles.y, 0.0f);
+        t.Rotate(new Vector3(XRotation, delta.x * isometricRotSpeed, 0.0f));
+        t.rotation = Quaternion.Euler(XRotation, t.rotation.eulerAngles.y, 0.0f);
+    }
 
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        delta = context.ReadValue<Vector2>();
     }
 
     private void OnRotate()
     {
         if (isBusy) return;
-        isRotating = Input.GetMouseButton(1);
-        if (Input.GetMouseButtonUp(1))
-        {
-            isBusy = true;
-            SnapRotation();
-        }
+        isRotating = Input.GetMouseButton(0);
+        
+        if (!Input.GetMouseButtonUp(0)) return;
+        isBusy = true;
+        SnapRotation();
     }
     
     private void SnapRotation()
@@ -58,16 +71,44 @@ public class CameraMovement : MonoBehaviour
 
     private Vector3 SnappedVector()
     {
-        var endValue = 0.0f;
-        var currentY = Mathf.Ceil(transform.rotation.eulerAngles.y);
-
+        var currentY = t.rotation.eulerAngles.y;
         endValue = currentY switch
         {
-            >= 0 and <= 90 => 45,
-            >= 91 and <= 180 => 135,
-            >= 181 and <= 270 => 225,
+            >= 0f and <= 90f => 45,
+            >= 90f and <= 180f => 135,
+            >= 180f and <= 270f => 225,
             _ => 315
         };
-        return new Vector3(xRotation, endValue, 0.0f);
+
+        return new Vector3(math.abs(XRotation), Mathf.Abs(endValue), math.abs(0));
+    }
+    
+    private void Zoom()
+    {
+        // for touch devices change the projection size for zooming
+        if (Input.touchCount == 2)
+        {
+            var touchZero = Input.GetTouch(0);
+            var touchOne = Input.GetTouch(1);
+
+            var touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            var touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+            var prevMagnitude = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            var currentMagnitude = (touchZero.position - touchOne.position).magnitude;
+
+            var difference = currentMagnitude - prevMagnitude;
+            Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - difference * zoomSpeed, minCameraZoom, maxCameraZoom);
+        }
+        
+        // for desktop devices change the projection size for zooming
+        if (Input.mouseScrollDelta.y > 0)
+        {
+            Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - zoomSpeed, minCameraZoom, maxCameraZoom);
+        }
+        else if (Input.mouseScrollDelta.y < 0)
+        {
+            Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize + zoomSpeed, minCameraZoom, maxCameraZoom);
+        }
     }
 }
