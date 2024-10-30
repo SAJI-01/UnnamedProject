@@ -8,12 +8,21 @@ public class WalkablePath : MonoBehaviour
 {
     #region Variables
     
+    public enum PlayerDirection //Show this in the inspector
+    {
+        Right,
+        Left,
+        Forward,
+        Backward
+    }
+    
+    
+    [Space]
     public List<WalkPath> possiblePaths = new List<WalkPath>();
 
     [Space] 
     public Transform previousBlock;
     private PlayerMovement player;
-    public Transform nextBlock;
 
     [Space] 
     [Header("Offsets")]
@@ -30,7 +39,7 @@ public class WalkablePath : MonoBehaviour
     public bool dontRotate;
 
     [Space] [Header("Colors")] 
-    private readonly Color selectedColor = Color.blue;
+    private readonly Color selectedColor = Color.green;
     private readonly Color inactiveColor = Color.gray;
 
     #endregion
@@ -47,7 +56,7 @@ public class WalkablePath : MonoBehaviour
     {
         var t = transform;
         float stair = isStair ? stairOffset : 0;
-        return t.position + t.up * walkPointOffset - t.up * stair;
+        return t.position+ t.up * walkPointOffset - t.up * stair;
     }
 
     private void OnDrawGizmos()
@@ -59,17 +68,15 @@ public class WalkablePath : MonoBehaviour
         Gizmos.DrawSphere(GetWalkPoint(), .1f);
 
         if (!player.isSearchComplete) return;
-        foreach (var p in player.toPath)
+        foreach (var p in player.pathNodes)
         {
-            if (p == player.ppreviousBlock)
+            if (p == player.pathNodes.First())
             {
                 Gizmos.color = Color.green;
-                Gizmos.DrawCube(player.ppreviousBlock.GetComponent<WalkablePath>().GetWalkPoint(), new Vector3(0.25f, 0.25f, 0.25f));
-                
+                Gizmos.DrawCube(player.pathNodes.First().GetComponent<WalkablePath>().GetWalkPoint(), new Vector3(0.25f, 0.25f, 0.25f));
             }
             else if (p == player.clickedCube)
             {
-                
                 Gizmos.color = Color.red;
                 Gizmos.DrawCube(player.clickedCube.GetComponent<WalkablePath>().GetWalkPoint(), new Vector3(0.25f, 0.25f, 0.25f));
             }
@@ -78,7 +85,6 @@ public class WalkablePath : MonoBehaviour
                 Gizmos.color = selectedColor;
                 Gizmos.DrawCube(p.GetComponent<WalkablePath>().GetWalkPoint(), new Vector3(0.15f, 0.15f, 0.15f));
             }
-
         }
     }
 

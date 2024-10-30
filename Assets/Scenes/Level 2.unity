@@ -247,7 +247,6 @@ MonoBehaviour:
   - target: {fileID: 933348763}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 933348763}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -380,7 +379,6 @@ MonoBehaviour:
   - target: {fileID: 890927130}
     active: 0
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -512,7 +510,6 @@ MonoBehaviour:
   - target: {fileID: 1741370568}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 1741370568}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -930,7 +927,6 @@ MonoBehaviour:
   - target: {fileID: 1666678071}
     active: 0
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 0
@@ -1287,7 +1283,6 @@ MonoBehaviour:
   - target: {fileID: 995155199}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 995155199}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -1418,7 +1413,6 @@ MonoBehaviour:
   - target: {fileID: 1054112616}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -1550,7 +1544,6 @@ MonoBehaviour:
   - target: {fileID: 289006284}
     active: 0
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -1582,7 +1575,6 @@ MonoBehaviour:
   - target: {fileID: 403207386}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 403207386}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -1882,7 +1874,6 @@ MonoBehaviour:
   - target: {fileID: 1532620264}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 1532620264}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -2014,7 +2005,6 @@ MonoBehaviour:
   - target: {fileID: 843175255}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -2146,7 +2136,6 @@ MonoBehaviour:
   - target: {fileID: 289006284}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -2178,7 +2167,6 @@ MonoBehaviour:
   - target: {fileID: 304824320}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 304824320}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -2310,7 +2298,6 @@ MonoBehaviour:
   - target: {fileID: 174736639}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 174736639}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -3183,7 +3170,6 @@ MonoBehaviour:
   - target: {fileID: 1673865677}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 1673865677}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -3297,7 +3283,6 @@ MonoBehaviour:
   - target: {fileID: 1072436974}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 0
@@ -3429,7 +3414,6 @@ MonoBehaviour:
   - target: {fileID: 1775176146}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 1775176146}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -3759,7 +3743,6 @@ MonoBehaviour:
   - target: {fileID: 475789699}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 475789699}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -3891,7 +3874,6 @@ MonoBehaviour:
   - target: {fileID: 1161831994}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 1161831994}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -4106,7 +4088,6 @@ MonoBehaviour:
   - target: {fileID: 1054112616}
     active: 1
   previousBlock: {fileID: 0}
-  nextBlock: {fileID: 0}
   walkPointOffset: 0.5
   stairOffset: 0.4
   walkPointSpeed: 1
@@ -4311,18 +4292,17 @@ MonoBehaviour:
       index: 0
     - walkablePathBlock: {fileID: 475789703}
       index: 1
-  moveBlockEnablers: []
-  rotateAnimation_Pivots:
-  - pivotName: to finish
+  enablers: []
+  Animation_Pivots:
+  - pivotName: To FInish
     conditions:
     - pivot: {fileID: 572400031}
       eulerAngle: {x: 0, y: 90, z: 270}
     paths:
-    - walkablePathBlock: {fileID: 890927131}
-      index: 1
     - walkablePathBlock: {fileID: 289006286}
       index: 1
-  objectToHideConditions: []
+    - walkablePathBlock: {fileID: 890927131}
+      index: 1
 --- !u!4 &1450111571990564181
 Transform:
   m_ObjectHideFlags: 0
@@ -9642,11 +9622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2304a449684b3785c09324b5a1ba3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 0.1
   isRotating: 0
-  isometricRotSpeed: 0.1
-  zoomSpeed: 0.01
-  minCameraZoom: 7
-  maxCameraZoom: 14
 --- !u!65 &6265183194319376839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9700,9 +9677,9 @@ MonoBehaviour:
   clickedCube: {fileID: 0}
   indicator: {fileID: 7226426082736197691}
   toPath: []
-  isWalking: 0
+  pathNodes: []
+  walking: 0
   isSearchComplete: 0
-  ppreviousBlock: {fileID: 0}
 --- !u!4 &6858652759294343132
 Transform:
   m_ObjectHideFlags: 0

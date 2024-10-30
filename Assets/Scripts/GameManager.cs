@@ -12,11 +12,14 @@ public class GameManager : MonoBehaviour
     private const float Tolerance = 0.1f;
     public PlayerMovement player;
     public List<PathCondition> pathConditions = new List<PathCondition>();
-    public List<Enabler> moveBlockEnablers = new List<Enabler>();
-    public List<PivotEnabler> rotateAnimation_Pivots = new List<PivotEnabler>();
+    public List<Enabler> enablers = new List<Enabler>();
+    public List<PivotEnabler> Animation_Pivots = new List<PivotEnabler>();
     public List<ObjectToHideCondition> objectToHideConditions = new List<ObjectToHideCondition>();
 
-    
+
+
+
+
     private void Awake()
     {
         instance = this;
@@ -45,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     private void Animation_Trigger()
     {
-        foreach (var pivot in rotateAnimation_Pivots)
+        foreach (var pivot in Animation_Pivots)
         {
             var count = pivot.conditions.Count(t => t.pivot.localRotation == Quaternion.Euler(t.eulerAngle));
 
@@ -56,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void Link(bool mbLaserStart, bool mbLaserEnd, bool mbNormalStart, bool mbNormalEnd)
     {
-        foreach (var enabler in moveBlockEnablers)
+        foreach (var enabler in enablers)
         {
             var count = 0;
             foreach (var ec in enabler.conditions)
@@ -79,7 +82,7 @@ public class GameManager : MonoBehaviour
     
     public void TriggerToAnimation()
     {
-        foreach (var pivotCondition in rotateAnimation_Pivots.SelectMany(pivot => pivot.conditions))
+        foreach (var pivotCondition in Animation_Pivots.SelectMany(pivot => pivot.conditions))
         {
             pivotCondition.pivot.DOComplete();
             pivotCondition.pivot.DOLocalRotate(pivotCondition.eulerAngle, .6f).SetEase(Ease.OutBack);
