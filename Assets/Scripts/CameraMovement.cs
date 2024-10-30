@@ -42,18 +42,18 @@ public class CameraMovement : MonoBehaviour
         IsometricRotateCamera();
     }
 
-    private void IsometricRotateCamera()
-    {
-        if (!isRotating) return;
-        t.Rotate(new Vector3(XRotation, delta.x * isometricRotSpeed, 0.0f));
-        t.rotation = Quaternion.Euler(XRotation, t.rotation.eulerAngles.y, 0.0f);
-    }
 
     public void OnLook(InputAction.CallbackContext context)
     {
         delta = context.ReadValue<Vector2>();
     }
 
+    private void IsometricRotateCamera()
+    {
+        if (!isRotating) return;
+        t.Rotate(new Vector3(XRotation, delta.x * isometricRotSpeed, 0.0f));
+        t.rotation = Quaternion.Euler(XRotation, t.rotation.eulerAngles.y, 0.0f);
+    }
     private void OnRotate()
     {
         if (isBusy) return;

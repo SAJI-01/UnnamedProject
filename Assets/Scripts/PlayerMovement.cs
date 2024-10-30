@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -17,12 +18,12 @@ public class PlayerMovement : MonoBehaviour
 
     [Space] 
     public List<Transform> toPath = new List<Transform>();
-    public List<Transform> pathNodes = new List<Transform>(); 
 
     [FormerlySerializedAs("walking")] public bool isWalking;
     public bool isSearchComplete;
     
     private Ray rayHit;
+    public Transform ppreviousBlock;
 
     private void Awake()
     {
@@ -56,14 +57,28 @@ public class PlayerMovement : MonoBehaviour
                     if (clickedCube == mouseHit.transform.CompareTag("Lever"))
                     {
                         toPath.Clear();
-                        pathNodes.Clear();
                         clickedCube = mouseHit.transform.GetComponent<Lever>().nearByBlock.transform;
                         mouseHit.transform.GetComponent<Lever>().toggle =
                             !mouseHit.transform.GetComponent<Lever>().toggle;
                     }
-
+                    /*void Assemble(Vector3 dir) {
+                        var anchor = transform.position + (Vector3.down + dir) * 0.5f;
+                        var axis = Vector3.Cross(Vector3.up, dir);
+                        StartCoroutine(Roll(anchor, axis));
+                    }
+                }
+ 
+                private IEnumerator Roll(Vector3 anchor, Vector3 axis) {
+                    _isMoving = true;
+                    for (var i = 0; i < 90 / _rollSpeed; i++) {
+                        transform.RotateAround(anchor, axis, _rollSpeed);
+                        yield return new WaitForSeconds(0.01f);
+                    }
+                    _isMoving = false;
+                }*/
+                    
+                    
                     DOTween.Kill(gameObject.transform);
-                    pathNodes.Clear();
                     toPath.Clear();
                     FindPath();
 
@@ -98,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 nextCubes.Add(path.target);
                 path.target.GetComponent<WalkablePath>().previousBlock = currentCube;
+                ppreviousBlock = path.target.GetComponent<WalkablePath>().previousBlock;
             }
         }
 
@@ -138,13 +154,11 @@ public class PlayerMovement : MonoBehaviour
     {
         //add the clicked cube in the last of the list 
         Transform cube = clickedCube;
-        pathNodes.Insert(0, currentCube);
 
         
         while (cube != currentCube) //Checks if the cube is not the current cube
         {
             toPath.Add(cube); //Adds the cube to the final destination of list 
-            pathNodes.Add(cube); 
             if (cube.GetComponent<WalkablePath>().previousBlock != null) 
                 cube = cube.GetComponent<WalkablePath>().previousBlock;
             else
