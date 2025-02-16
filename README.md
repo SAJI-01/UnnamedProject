@@ -1,6 +1,6 @@
 **Untitled;**
 
-**This is Game Project that i was Create which was Inspired By Monument Valley, Hocus.**
+**This is a Game Project Inspired By Monument Valley, Hocus.**
 
 ##
 
